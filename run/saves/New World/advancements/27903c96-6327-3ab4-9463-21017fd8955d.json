@@ -1,0 +1,33 @@
+{
+  "minecraft:story/obtain_armor": {
+    "criteria": {
+      "iron_boots": "2022-10-09 03:49:14 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_nugget_from_blasting": {
+    "criteria": {
+      "has_iron_boots": "2022-10-09 03:49:14 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/emerald_block": {
+    "criteria": {
+      "has_emerald": "2022-10-09 03:49:11 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_nugget_from_smelting": {
+    "criteria": {
+      "has_iron_boots": "2022-10-09 03:49:14 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:stony_shore": "2022-10-09 03:48:22 +0300"
+    },
+    "done": false
+  },
+  "DataVersion": 2975
+}
