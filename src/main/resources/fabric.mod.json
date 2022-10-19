@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "id": "trading_block",
+  "id": "trader_block",
   "version": "${version}",
 
-  "name": "Trading Block Mod",
-  "description": "Adds a Trading block which functions similar to a villager",
+  "name": "Trader Block Mod",
+  "description": "Adds a Trader block which functions similar to a villager",
   "authors": [
     "Skeevert"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Skeevert/trader-block-mod"
   },
 
   "license": "CC-BY-SA",
-  "icon": "assets/trading_block/icon.png",
+  "icon": "assets/trader_block/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.tradingblockmod.TradingBlockMod"
+      "net.fabricmc.traderblockmod.TraderBlockMod"
     ]
   },
 

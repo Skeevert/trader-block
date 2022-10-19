@@ -1,4 +1,4 @@
-package net.fabricmc.tradingblockmod;
+package net.fabricmc.traderblockmod;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockEntityProvider;
@@ -13,8 +13,8 @@ import net.minecraft.util.math.BlockPos;
 
 import net.minecraft.world.World;
 
-public class TradingBlock extends Block implements BlockEntityProvider {
-	public TradingBlock(Settings settings) {
+public class TraderBlock extends Block implements BlockEntityProvider {
+	public TraderBlock(Settings settings) {
 		super(settings);
 	}
 	
@@ -28,8 +28,8 @@ public class TradingBlock extends Block implements BlockEntityProvider {
 		
 		BlockEntity ent = world.getBlockEntity(pos);
 		
-		if (ent instanceof TradingBlockEntity) {
-			((TradingBlockEntity)ent).onInteract(state, world, pos, player, hand, hit);
+		if (ent instanceof TraderBlockEntity) {
+			((TraderBlockEntity)ent).onInteract(state, world, pos, player, hand, hit);
 		}
 		
 		
@@ -38,6 +38,6 @@ public class TradingBlock extends Block implements BlockEntityProvider {
 
 	@Override
 	public BlockEntity createBlockEntity(BlockPos arg0, BlockState arg1) {
-		return new TradingBlockEntity(arg0, arg1);
+		return new TraderBlockEntity(arg0, arg1);
 	}
 }

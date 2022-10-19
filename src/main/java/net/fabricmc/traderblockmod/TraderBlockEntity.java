@@ -1,4 +1,4 @@
-package net.fabricmc.tradingblockmod;
+package net.fabricmc.traderblockmod;
 
 import java.util.HashSet;
 import java.util.OptionalInt;
@@ -35,7 +35,7 @@ import net.minecraft.village.VillagerType;
 import net.minecraft.world.World;
 import net.minecraft.world.poi.PointOfInterestType;
 
-public class TradingBlockEntity extends BlockEntity implements Merchant {
+public class TraderBlockEntity extends BlockEntity implements Merchant {
 	private TradeOfferList offers = new TradeOfferList();
 	private VillagerProfession profession = VillagerProfession.NONE;
 	
@@ -53,8 +53,8 @@ public class TradingBlockEntity extends BlockEntity implements Merchant {
 	
 	private BlockPos adjacentPositions[] = {null, null, null, null};
 	
-	public TradingBlockEntity(BlockPos pos, BlockState state) {
-		super(TradingBlockMod.TRADING_BLOCK_ENTITY, pos, state);
+	public TraderBlockEntity(BlockPos pos, BlockState state) {
+		super(TraderBlockMod.TRADER_BLOCK_ENTITY, pos, state);
 		fillOfferList();
 	}
 	
@@ -72,7 +72,7 @@ public class TradingBlockEntity extends BlockEntity implements Merchant {
 		}
 		
 		this.setCustomer(player);
-		this.sendOffers(customer, Text.of("Trading block"), this.level);
+		this.sendOffers(customer, Text.of("Trader block"), this.level);
 		
 		return ActionResult.SUCCESS;
 	}
@@ -147,7 +147,7 @@ public class TradingBlockEntity extends BlockEntity implements Merchant {
     @Override           
     public void sendOffers(PlayerEntity player2, Text test, int levelProgress) {    
         TradeOfferList tradeOfferList;    
-        OptionalInt optionalInt = player2.openHandledScreen(new SimpleNamedScreenHandlerFactory((syncId, playerInventory, player) -> new TradingBlockScreenHandler(syncId, playerInventory, this), test));    
+        OptionalInt optionalInt = player2.openHandledScreen(new SimpleNamedScreenHandlerFactory((syncId, playerInventory, player) -> new TraderBlockScreenHandler(syncId, playerInventory, this), test));    
                         
         if (optionalInt.isPresent() && !(tradeOfferList = this.getOffers()).isEmpty()) {    
             player2.sendTradeOffers(optionalInt.getAsInt(), tradeOfferList, levelProgress, this.getExperience(), this.isLeveledMerchant(), this.canRefreshTrades());    

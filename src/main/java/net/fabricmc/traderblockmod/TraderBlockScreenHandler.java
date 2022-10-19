@@ -1,4 +1,4 @@
-package net.fabricmc.tradingblockmod;
+package net.fabricmc.traderblockmod;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -7,12 +7,12 @@ import net.minecraft.screen.MerchantScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.village.Merchant;
 
-public class TradingBlockScreenHandler extends MerchantScreenHandler {
-	public TradingBlockScreenHandler(int syncId, PlayerInventory playerInventory) {
+public class TraderBlockScreenHandler extends MerchantScreenHandler {
+	public TraderBlockScreenHandler(int syncId, PlayerInventory playerInventory) {
 		super(syncId, playerInventory);
 	}
 	
-	public TradingBlockScreenHandler(int syncId, PlayerInventory playerInventory, Merchant merchant) {
+	public TraderBlockScreenHandler(int syncId, PlayerInventory playerInventory, Merchant merchant) {
 		super(syncId, playerInventory, merchant);
 	}
 	
