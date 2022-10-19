@@ -1,9 +1,4 @@
-# Fabric Example Mod
+# Trader Block Mod
 
-## Setup
-
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+## Description
+Adds a craftable block with a similar to a villager functionality. Pufferfish inside will happily satisfy all your shopping needs!
