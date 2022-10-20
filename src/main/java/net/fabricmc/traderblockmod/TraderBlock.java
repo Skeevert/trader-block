@@ -33,12 +33,6 @@ public class TraderBlock extends Block implements BlockEntityProvider {
 	
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-		if (!world.isClient()) {
-			player.sendMessage(Text.of("Oh hi!"), false);
-		}
-		
-		
-		
 		BlockEntity ent = world.getBlockEntity(pos);
 		
 		if (ent instanceof TraderBlockEntity) {

@@ -65,7 +65,15 @@ public class TraderBlockEntity extends BlockEntity implements Merchant {
 		
 		// We don't have the AI, so that's the solution of the restock problem
 		// TODO: Maybe increase restock time to help villagers stay somewhat viable
-		long currentTime = this.world.getTimeOfDay();
+
+
+       if (!world.isClient() && this.profession == VillagerProfession.NONE) {
+           player.sendMessage(Text.of("Boss, I don't have any profession! Place a profession block nearby!"), false);
+           return ActionResult.SUCCESS;
+       }
+
+        long currentTime = this.world.getTimeOfDay();
+
 		if (this.lastRestockTime + restockTime < currentTime) {
 			fullRestock();
 			this.lastRestockTime = currentTime;
@@ -252,7 +260,7 @@ public class TraderBlockEntity extends BlockEntity implements Merchant {
 			for (BlockPos adjPos : adjacentPositions) {
 				PointOfInterestType poiType;
 				poiType = servWorld.getPointOfInterestStorage().getType(adjPos).orElse(null);
-				if (poiType != null &&  poiType != this.profession.getWorkStation()) {
+				if (poiType != null) {
 					VillagerProfession newProf = Registry.VILLAGER_PROFESSION.stream().filter((prof) -> prof.getWorkStation() == poiType).findAny().orElse(VillagerProfession.NONE);
 					if (newProf != VillagerProfession.NONE) {
 						if (newProf != this.profession) {
