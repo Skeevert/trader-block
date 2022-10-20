@@ -1,7 +1,13 @@
-    {
-      "variants": {
+{
+    "variants": {
         "": { "model": "trader_block_mod:block/trader_block" }
-      }
+    },
+    "variants": {
+        "facing=north": { "model": "trader_block_mod:block/trader_block" },
+        "facing=south": { "model": "trader_block_mod:block/trader_block", "y": 180 },
+        "facing=west":  { "model": "trader_block_mod:block/trader_block", "y": 270 },
+        "facing=east":  { "model": "trader_block_mod:block/trader_block", "y": 90 }
     }
+}
 
 
